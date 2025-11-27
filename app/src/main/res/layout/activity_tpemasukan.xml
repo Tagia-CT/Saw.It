@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header"
+        android:layout_width="408dp"
+        android:layout_height="77dp"
+        android:paddingHorizontal="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonBack"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="24dp"
+            android:padding="8dp"
+            app:icon="@drawable/back"
+            app:iconPadding="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:id="@+id/scrollContentIn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="24dp">
+
+            <TextView
+                android:id="@+id/textHeaderTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Tambah Pemasukan Baru"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/textTanggalPemasukan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Tanggal: 2025-11-19"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:drawablePadding="8dp"
+                android:layout_marginTop="16dp"
+                android:drawableStart="@drawable/ic_calendar_24"
+                android:drawableTint="@color/colorPrimary"
+                app:layout_constraintTop_toBottomOf="@id/textHeaderTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/textLabelKategoriIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kategori Pemasukan"
+                android:textColor="@color/colorTextSecondary"
+                android:layout_marginTop="32dp"
+                app:layout_constraintTop_toBottomOf="@id/textTanggalPemasukan"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Spinner
+                android:id="@+id/spinnerKategoriIn"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:background="@drawable/spinner_background"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/textLabelKategoriIn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/textLabelKetIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Keterangan (opsional)"
+                android:textColor="@color/colorTextSecondary"
+                android:layout_marginTop="24dp"
+                app:layout_constraintTop_toBottomOf="@id/spinnerKategoriIn"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/editKeteranganIn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:minLines="2"
+                android:maxLines="4"
+                android:gravity="top|start"
+                android:hint="Contoh: Hasil jual ke pabrik A"
+                android:background="@drawable/bg_card"
+                android:padding="12dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/textLabelKetIn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/textLabelBerat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Berat Jual (Kg)"
+                android:textColor="@color/colorTextSecondary"
+                android:layout_marginTop="24dp"
+                app:layout_constraintTop_toBottomOf="@id/editKeteranganIn"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/editBeratKg"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:hint="0.00"
+                android:background="@drawable/bg_card"
+                android:padding="12dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/textLabelBerat"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/textLabelHarga"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Harga per Kg (Rp)"
+                android:textColor="@color/colorTextSecondary"
+                android:layout_marginTop="24dp"
+                app:layout_constraintTop_toBottomOf="@id/editBeratKg"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/editHargaPerKg"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="0"
+                android:background="@drawable/bg_card"
+                android:padding="12dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/textLabelHarga"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/textTotalIn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Total: Rp 0"
+                android:textColor="@color/colorPositive"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginTop="32dp"
+                app:layout_constraintTop_toBottomOf="@id/editHargaPerKg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <Button
+                android:id="@+id/buttonSimpanIn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/colorPositive"
+                android:minHeight="60dp"
+                android:text="SIMPAN TRANSAKSI PEMASUKAN"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:cornerRadius="10dp"
+                app:layout_constraintTop_toBottomOf="@id/textTotalIn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

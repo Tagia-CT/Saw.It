@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="1dp"
+    app:strokeColor="@color/colorDivider"
+    app:strokeWidth="1dp"
+    app:cardBackgroundColor="#B0BEC5"
+    android:id="@+id/cardMonthlySummary">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textMonthYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorTextPrimary"
+                tools:text="Januari 2025" />
+
+            <TextView
+                android:id="@+id/textLabaRugi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textSize="14sp"
+                tools:text="Rp -500.000" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="44dp"
+            android:layout_height="38dp"
+            android:contentDescription="Detail Bulanan"
+            android:src="@drawable/detail01"
+            app:tint="@color/colorTextSecondary" />
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

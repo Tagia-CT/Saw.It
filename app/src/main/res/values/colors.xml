@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#004d47</color>
+    <color name="colorPrimaryLight">#128277</color>
+    <color name="colorPrimarySoft">#52958b</color>
+    <color name="colorBackground">#FAFAFA</color>
+    <color name="colorPositive">#128277</color>
+    <color name="colorNegative">#C62828</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="colorDivider">#E0E0E0</color>
+    <color name="colorTextPrimary">#212121</color>
+    <color name="colorTextSecondary">#757575</color>
+    <color name="colorlaba">#1565C0</color>
+</resources>
