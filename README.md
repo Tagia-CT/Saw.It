@@ -10,7 +10,7 @@ Aplikasi ini menggabungkan metode **AHP (Analytic Hierarchy Process)** untuk pem
 
 | Dashboard Utama | Input Bobot AHP | Hasil Perangkingan | Riwayat Analisis |
 |:---:|:---:|:---:|:---:|
-| <img src="docs/dashboard.png" height="500" alt="Dashboard" /> | <img src="docs/ahp.png" height="500" alt="Input AHP" /> | <img src="docs/hasil.png" height="500" alt="Hasil TOPSIS" /> | <img src="docs/riwayat.png" height="500" alt="Riwayat" /> |
+| <img width="240" alt="Screenshot 1" src="https://github.com/user-attachments/assets/df7edb8e-a8af-4db2-87df-2d6e926d4798" /> | <img width="240" alt="Screenshot 2" src="https://github.com/user-attachments/assets/01f3c7aa-4ce2-4aff-8d74-da9e15c9ea01" /> | <img width="240" alt="Screenshot 3" src="https://github.com/user-attachments/assets/df723d5a-1471-4685-8325-6fb750f652c3" /> | <img width="240" alt="Screenshot 4" src="https://github.com/user-attachments/assets/7f280609-1219-47c6-82df-fff34f27a1e9" /> |
 
 ---
 
