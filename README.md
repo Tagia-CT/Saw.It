@@ -1,4 +1,4 @@
-# SPK Pemilihan Pupuk Kelapa Sawit (AHP & TOPSIS)
+<img width="1260" height="2577" alt="Screenshot_2025_1230_143816" src="https://github.com/user-attachments/assets/32c12941-a839-4511-905f-0c1c40c2a598" /># SPK Pemilihan Pupuk Kelapa Sawit (AHP & TOPSIS)
 
 Aplikasi Android Sistem Pendukung Keputusan (SPK) untuk membantu petani kelapa sawit memilih rekomendasi pupuk terbaik berdasarkan kondisi lahan dan kebutuhan nutrisi.
 
@@ -10,7 +10,7 @@ Aplikasi ini menggabungkan metode **AHP (Analytic Hierarchy Process)** untuk pem
 *(Silakan upload screenshot aplikasi Anda ke folder di repo, lalu ganti link di bawah ini)*
 | Dashboard | Input AHP | Hasil TOPSIS | Riwayat |
 |:---:|:---:|:---:|:---:|
-|<img width="1260" height="2588" alt="Screenshot_2025_1230_142925" src="https://github.com/user-attachments/assets/f5d0cc5e-251d-4907-aff6-5e0edbcf7599" /> | <img width="1260" height="2559" alt="Screenshot_2025_1230_143233" src="https://github.com/user-attachments/assets/01f3c7aa-4ce2-4aff-8d74-da9e15c9ea01" /> | <img width="1260" height="2569" alt="Screenshot_2025_1230_143034" src="https://github.com/user-attachments/assets/df723d5a-1471-4685-8325-6fb750f652c3" /> | <img width="1260" height="2568" alt="Screenshot_2025_1230_143045" src="https://github.com/user-attachments/assets/7f280609-1219-47c6-82df-fff34f27a1e9" /> |
+|<img width="1260" height="2577" alt="Screenshot_2025_1230_143816" src="https://github.com/user-attachments/assets/df7edb8e-a8af-4db2-87df-2d6e926d4798" /> | <img width="1260" height="2559" alt="Screenshot_2025_1230_143233" src="https://github.com/user-attachments/assets/01f3c7aa-4ce2-4aff-8d74-da9e15c9ea01" /> | <img width="1260" height="2569" alt="Screenshot_2025_1230_143034" src="https://github.com/user-attachments/assets/df723d5a-1471-4685-8325-6fb750f652c3" /> | <img width="1260" height="2568" alt="Screenshot_2025_1230_143045" src="https://github.com/user-attachments/assets/7f280609-1219-47c6-82df-fff34f27a1e9" /> |
 
 ---
 
