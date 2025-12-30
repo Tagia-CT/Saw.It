@@ -1,10 +1,12 @@
+# SPK Pemilihan Pupuk Kelapa Sawit (AHP & TOPSIS)
+
 Aplikasi Android Sistem Pendukung Keputusan (SPK) untuk membantu petani kelapa sawit memilih rekomendasi pupuk terbaik berdasarkan kondisi lahan dan kebutuhan nutrisi.
 
 Aplikasi ini menggabungkan metode **AHP (Analytic Hierarchy Process)** untuk pembobotan kriteria dan **TOPSIS (Technique for Order of Preference by Similarity to Ideal Solution)** untuk perankingan alternatif.
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 *(Silakan upload screenshot aplikasi Anda ke folder di repo, lalu ganti link di bawah ini)*
 | Dashboard | Input AHP | Hasil TOPSIS | Riwayat |
 |:---:|:---:|:---:|:---:|
@@ -41,7 +43,7 @@ Aplikasi ini menggabungkan metode **AHP (Analytic Hierarchy Process)** untuk pem
 
 ---
 
-## 📝 Kriteria Keputusan
+## Kriteria Keputusan
 Aplikasi ini menggunakan 5 kriteria utama:
 1.  **C1 - Kandungan Hara Makro** (Benefit)
 2.  **C2 - Kandungan Hara Mikro** (Benefit)
