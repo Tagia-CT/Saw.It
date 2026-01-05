@@ -64,6 +64,7 @@ public class TransaksiActivity extends AppCompatActivity {
                     bulan - 1,
                     hari
             );
+            dialog.getDatePicker().setMaxDate(System.currentTimeMillis());
             dialog.show();
         });
     }
@@ -103,6 +104,13 @@ public class TransaksiActivity extends AppCompatActivity {
             Toast.makeText(this, "Silakan pilih tanggal terlebih dahulu", Toast.LENGTH_SHORT).show();
             return false;
         }
+
+        int tahunSekarang = Calendar.getInstance().get(Calendar.YEAR);
+        if (tahun > tahunSekarang) {
+            Toast.makeText(this, "Tahun tidak boleh melebihi tahun saat ini", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
         return true;
     }
 }
