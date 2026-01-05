@@ -168,7 +168,7 @@ public class DetailBulananActivity extends AppCompatActivity {
         int tahunDetail = tahun;
         int bulanDetail = bulan;
 
-        // 1. Ambil Data
+        // 1. Ambil Data dari DAO
         List<DailySummary> list = transaksiDao.getDailySummary(tahunDetail, bulanDetail);
 
         if (list == null || list.isEmpty()) {
@@ -189,63 +189,58 @@ public class DetailBulananActivity extends AppCompatActivity {
 
         ArrayList<Entry> inEntries = new ArrayList<>();
         ArrayList<Entry> outEntries = new ArrayList<>();
-
         final ArrayList<String> xLabels = new ArrayList<>();
 
         long totalInBulan = 0;
         long totalOutBulan = 0;
 
+        // 2. Mapping Data menggunakan Indeks i
         for (int i = 0; i < list.size(); i++) {
             DailySummary ds = list.get(i);
-
-            float x = (float) i;
+            float x = (float) i; // Menggunakan indeks sebagai posisi horizontal
 
             inEntries.add(new Entry(x, ds.totalIn));
             outEntries.add(new Entry(x, ds.totalOut));
 
+            // Simpan tanggal asli untuk label sumbu X
             xLabels.add(String.valueOf(ds.hari));
 
             totalInBulan += (long) ds.totalIn;
             totalOutBulan += (long) ds.totalOut;
         }
 
+        // 3. Konfigurasi Dataset (Meniru Gaya Dashboard Utama)
         LineDataSet setIn = new LineDataSet(inEntries, "Pemasukan");
         setIn.setColor(getColor(R.color.colorPositive));
-        setIn.setLineWidth(2f);
+        setIn.setLineWidth(2.5f);
         setIn.setCircleColor(getColor(R.color.colorPositive));
         setIn.setCircleRadius(4f);
         setIn.setDrawValues(false);
-        setIn.setMode(LineDataSet.Mode.LINEAR);
+        setIn.setDrawCircles(true);
 
         LineDataSet setOut = new LineDataSet(outEntries, "Pengeluaran");
         setOut.setColor(getColor(R.color.colorNegative));
-        setOut.setLineWidth(2f);
+        setOut.setLineWidth(2.5f);
         setOut.setCircleColor(getColor(R.color.colorNegative));
         setOut.setCircleRadius(4f);
         setOut.setDrawValues(false);
-        setOut.setMode(LineDataSet.Mode.LINEAR);
+        setOut.setDrawCircles(true);
 
         LineData lineData = new LineData(setIn, setOut);
         lineChart.setData(lineData);
 
-        // 3. Konfigurasi Chart Umum
-        lineChart.getDescription().setEnabled(false);
-        lineChart.getAxisRight().setEnabled(false);
-        lineChart.setDrawGridBackground(false);
-        lineChart.setPinchZoom(true); // Izinkan zoom cubit
-        lineChart.setDragEnabled(true);
-
-        // 4. Konfigurasi Sumbu X (KUNCI PERBAIKAN)
+        // 4. Konfigurasi Sumbu X (Kunci Keamanan)
         XAxis xAxis = lineChart.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
         xAxis.setDrawGridLines(false);
         xAxis.setGranularity(1f);
         xAxis.setGranularityEnabled(true);
 
-        xAxis.setValueFormatter(new com.github.mikephil.charting.formatter.ValueFormatter() {
+        // Formatter untuk mengambil tanggal dari xLabels berdasarkan indeks
+        xAxis.setValueFormatter(new ValueFormatter() {
             @Override
             public String getAxisLabel(float value, AxisBase axis) {
-                int index = (int) value;
+                int index = Math.round(value);
                 if (index >= 0 && index < xLabels.size()) {
                     return xLabels.get(index);
                 }
@@ -253,37 +248,29 @@ public class DetailBulananActivity extends AppCompatActivity {
             }
         });
 
+        // PENGATURAN AGAR TIDAK GARIS LURUS:
+        // Jika data < 5, paksa lebar sumbu X minimal 4 agar titik tidak terjepit
         xAxis.setAxisMinimum(-0.5f);
-        xAxis.setAxisMaximum(list.size() - 0.5f);
-
+        float maxView = Math.max(4f, list.size() - 0.5f);
+        xAxis.setAxisMaximum(maxView);
 
         // 5. Konfigurasi Sumbu Y
         YAxis yAxis = lineChart.getAxisLeft();
-        yAxis.setDrawAxisLine(true);
-        yAxis.setDrawGridLines(true);
-        yAxis.setDrawZeroLine(true);
-        yAxis.setAxisMinimum(0f);
+        yAxis.setAxisMinimum(0f); // Selalu mulai dari 0
+        lineChart.getAxisRight().setEnabled(false);
 
-        // Legend & Marker
-        Legend legend = lineChart.getLegend();
-        legend.setVerticalAlignment(Legend.LegendVerticalAlignment.TOP);
-        legend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.CENTER);
-
+        // Marker & Refresh
         ValueMarkerView marker = new ValueMarkerView(this, R.layout.marker_value, lineChart);
-        marker.setChartView(lineChart);
         lineChart.setMarker(marker);
-
-        // Refresh Chart
+        lineChart.getDescription().setEnabled(false);
         lineChart.invalidate();
 
         // Update Text Summary
         textPemasukan.setText("Total pemasukan: " + formatRupiah(totalInBulan));
         textPengeluaran.setText("Total pengeluaran: " + formatRupiah(totalOutBulan));
-        textPemasukan.setTextColor(getColor(R.color.colorPositive));
-        textPengeluaran.setTextColor(getColor(R.color.colorNegative));
 
         new AlertDialog.Builder(this)
-                .setTitle("Diagram Harian " + formatBulanTahun(bulanDetail, tahunDetail))
+                .setTitle("Diagram Harian " + getNamaBulan(bulanDetail) + " " + tahunDetail)
                 .setView(view)
                 .setPositiveButton("Tutup", null)
                 .show();
