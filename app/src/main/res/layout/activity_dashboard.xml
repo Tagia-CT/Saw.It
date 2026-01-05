@@ -52,9 +52,16 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/spinner_year"
-                android:paddingStart="16dp"
+                android:paddingStart="0dp"
                 android:paddingEnd="40dp"
-                android:spinnerMode="dropdown" />
+                android:textAlignment="center"
+                android:gravity="center"
+                android:spinnerMode="dropdown"
+                android:dropDownWidth="175dp"
+                android:dropDownHorizontalOffset="0dp"
+                android:dropDownVerticalOffset="0dp"
+                android:overlapAnchor="false"
+                android:popupBackground="@drawable/bg_spinner_popup" />
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/layoutTotalIn"
