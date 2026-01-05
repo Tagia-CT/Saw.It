@@ -42,8 +42,7 @@ public class ValueMarkerView extends MarkerView {
 
             if (dataSet != null) {
                 int color = dataSet.getColor();
-                tvValue.setTextColor(color);  // warna teks = warna line
-                // kalau mau, bisa tambahkan perubahan background di sini juga
+                tvValue.setTextColor(color);
             }
         }
 
